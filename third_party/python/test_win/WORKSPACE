@@ -1,8 +1,8 @@
 
 new_local_repository(
     name = "org_python",
-    path = "third_party/python3/win_x86_64",
-    build_file = """
+    path = "third_party/python",
+    build_file_content = """
 
 package(default_visibility = ["//visibility:public"])
 

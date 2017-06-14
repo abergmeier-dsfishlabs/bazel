@@ -1,6 +1,6 @@
 
 cc_binary(
-    name = "main",
+    name = "main.so", # so on Windows kills a puppy
     srcs = [
         "main.cpp"
     ],
