@@ -1,0 +1,24 @@
+
+new_local_repository(
+    name = "org_python",
+    path = "third_party/python3/win_x86_64",
+    build_file = """
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "library",
+    hdrs = glob(["include/*.h"]),
+    includes = ["include"],
+)
+
+cc_library(
+    name = "static",
+    srcs = ["libs/python36.lib"],
+    defines = ["Py_NO_ENABLE_SHARED"], # Disable ugly non-hermetic pragma linking
+    deps = [
+        ":library",
+    ],
+)
+"""
+)
